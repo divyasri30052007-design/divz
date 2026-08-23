@@ -1,0 +1,421 @@
+/* ================================
+   GENERAL
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "Poppins", Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff0f5,
+        #ffe1ec
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #5a2639;
+
+    overflow-x: hidden;
+}
+
+
+/* ================================
+   MAIN PAGE CARD
+================================ */
+
+.page {
+    width: 90%;
+    max-width: 600px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    padding: 40px 30px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.15);
+
+    animation: fadeIn 0.7s ease;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ================================
+   HIDE PAGE
+================================ */
+
+.hidden {
+    display: none;
+}
+
+
+/* ================================
+   HEADINGS
+================================ */
+
+h1 {
+    color: #d43f72;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #c43b69;
+
+    margin-top: 25px;
+}
+
+
+/* ================================
+   PARAGRAPHS
+================================ */
+
+p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin: 15px 0;
+}
+
+
+/* ================================
+   GIFT EMOJI
+================================ */
+
+.gift {
+    font-size: 75px;
+
+    margin-bottom: 15px;
+
+    animation: giftBounce 1.5s infinite;
+}
+
+
+/* ================================
+   MEMORY IMAGE
+================================ */
+
+.memory-img {
+    width: 100%;
+
+    max-height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 22px;
+
+    margin: 20px 0;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18);
+
+    transition: 0.4s;
+}
+
+
+/* Image hover effect */
+
+.memory-img:hover {
+    transform: scale(1.02);
+}
+
+
+/* ================================
+   MEMORY TEXT
+================================ */
+
+.memory-text {
+    background: #fff1f6;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    color: #713449;
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+button {
+    background: linear-gradient(
+        135deg,
+        #d94d7d,
+        #c73868
+    );
+
+    color: white;
+
+    border: none;
+
+    padding: 15px 28px;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 18px;
+
+    box-shadow:
+        0 6px 15px rgba(217, 77, 125, 0.3);
+
+    transition: all 0.3s ease;
+}
+
+
+/* Button hover */
+
+button:hover {
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow:
+        0 10px 20px rgba(217, 77, 125, 0.35);
+}
+
+
+/* Button click */
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* ================================
+   TEXT AREA
+================================ */
+
+textarea {
+    width: 100%;
+
+    min-height: 120px;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border-radius: 18px;
+
+    border: 2px solid #f0bfd1;
+
+    background: #fffafb;
+
+    color: #5a2639;
+
+    font-size: 16px;
+
+    font-family: Arial, sans-serif;
+
+    resize: vertical;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+/* Textarea focus */
+
+textarea:focus {
+    border-color: #d94d7d;
+
+    box-shadow:
+        0 0 10px rgba(217, 77, 125, 0.15);
+}
+
+
+/* ================================
+   FINAL MESSAGE
+================================ */
+
+.final-message {
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #ffe5ee
+    );
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    color: #713449;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    border: 1px solid #ffd0df;
+}
+
+
+/* ================================
+   FLOATING HEARTS
+================================ */
+
+.hearts {
+    position: fixed;
+
+    top: 20px;
+
+    right: 20px;
+
+    font-size: 25px;
+
+    letter-spacing: 8px;
+
+    z-index: 1;
+
+    animation: floatingHearts 3s ease-in-out infinite;
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes giftBounce {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px)
+                   rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes floatingHearts {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 0;
+    }
+
+    .page {
+        width: 94%;
+
+        padding: 30px 20px;
+
+        border-radius: 25px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .gift {
+        font-size: 65px;
+    }
+
+    .memory-img {
+        max-height: 350px;
+    }
+
+    button {
+        width: 100%;
+
+        padding: 14px 20px;
+    }
+
+    textarea {
+        font-size: 15px;
+    }
+
+}
+
+
+/* ================================
+   VERY SMALL MOBILE
+================================ */
+
+@media (max-width: 350px) {
+
+    .page {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .gift {
+        font-size: 55px;
+    }
+
+}
