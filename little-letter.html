@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Letter 💌</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "DM Sans", sans-serif;
+
+    background:
+        radial-gradient(circle at 15% 20%, #ffd8e7 0%, transparent 28%),
+        radial-gradient(circle at 85% 75%, #e7b4ca 0%, transparent 30%),
+        linear-gradient(135deg, #fff7fa, #f4d8e4, #e9c1d3);
+
+    color: #573545;
+}
+
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+.glow {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 180, 210, 0.25);
+
+    filter: blur(70px);
+
+    animation: glowMove 7s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+.glow.one {
+    top: -100px;
+    left: -100px;
+}
+
+.glow.two {
+    bottom: -120px;
+    right: -100px;
+
+    animation-delay: 2s;
+}
+
+@keyframes glowMove {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.3);
+    }
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -40px;
+
+    color: rgba(150, 65, 100, 0.25);
+
+    font-size: 22px;
+
+    pointer-events: none;
+
+    animation: floatUp 9s linear infinite;
+}
+
+.f1 { left: 8%; animation-delay: 0s; }
+.f2 { left: 20%; animation-delay: 2s; }
+.f3 { left: 35%; animation-delay: 5s; }
+.f4 { left: 52%; animation-delay: 1s; }
+.f5 { left: 68%; animation-delay: 4s; }
+.f6 { left: 82%; animation-delay: 6s; }
+.f7 { left: 93%; animation-delay: 3s; }
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    width: min(92%, 650px);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* TOP TEXT */
+
+.eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #956077;
+
+    margin-bottom: 10px;
+
+    opacity: 0.9;
+}
+
+.title {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 43px;
+
+    font-weight: 500;
+
+    color: #5c3043;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   SECRET CARD
+========================= */
+
+.letter-card {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+
+    min-height: 390px;
+
+    margin: auto;
+
+    padding: 40px 38px;
+
+    border-radius: 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.72),
+            rgba(255,240,246,0.46)
+        );
+
+    border: 1px solid rgba(255,255,255,0.8);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 30px 80px rgba(103,48,73,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+
+    transition: 1s ease;
+}
+
+
+/* little decorative corners */
+
+.letter-card::before,
+.letter-card::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    color: rgba(161,76,108,0.35);
+
+    font-size: 18px;
+}
+
+.letter-card::before {
+    top: 18px;
+    left: 22px;
+}
+
+.letter-card::after {
+    bottom: 18px;
+    right: 22px;
+}
+
+
+/* =========================
+   LOCK SCREEN
+========================= */
+
+.lock-screen {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 305px;
+
+    transition: 0.8s ease;
+}
+
+
+.lock-icon {
+
+    width: 82px;
+    height: 82px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    font-size: 32px;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ffdce8,
+            #d783a5
+        );
+
+    color: white;
+
+    box-shadow:
+        0 12px 30px rgba(150,65,100,0.25);
+
+    animation: heartbeat 2s infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.07);
+    }
+}
+
+
+.lock-screen h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 29px;
+
+    font-weight: 500;
+
+    color: #63374a;
+
+    margin-bottom: 8px;
+}
+
+
+.lock-screen p {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-style: italic;
+
+    font-size: 17px;
+
+    color: #8b6574;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   WAX SEAL
+========================= */
+
+.seal-button {
+
+    width: 65px;
+    height: 65px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #df91ad,
+            #9b4769
+        );
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(130,50,80,0.3);
+
+    transition: 0.35s;
+
+    position: relative;
+}
+
+
+.seal-button::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -7px;
+
+    border-radius: 50%;
+
+    border: 1px dashed rgba(143,65,96,0.35);
+
+    animation: rotate 8s linear infinite;
+}
+
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.seal-button:hover {
+
+    transform: scale(1.12);
+
+    box-shadow:
+        0 12px 30px rgba(130,50,80,0.4);
+}
+
+
+/* =========================
+   LETTER CONTENT
+========================= */
+
+.letter-content {
+
+    display: none;
+
+    text-align: left;
+
+    animation: letterReveal 1.2s ease forwards;
+}
+
+
+@keyframes letterReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.letter-date {
+
+    text-align: center;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #9a687a;
+
+    margin-bottom: 22px;
+}
+
+
+.letter-content h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    font-style: italic;
+
+    font-weight: 500;
+
+    color: #733a52;
+
+    margin-bottom: 18px;
+}
+
+
+.letter-text {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+
+    color: #684857;
+}
+
+
+.letter-text p {
+
+    margin-bottom: 13px;
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+    transition: 0.8s ease;
+}
+
+
+.letter-text p.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.special-line {
+
+    margin-top: 18px;
+
+    padding: 16px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.5);
+
+    border: 1px solid rgba(177,92,124,0.12);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-style: italic;
+
+    font-size: 20px;
+
+    color: #873e5c;
+
+    opacity: 0;
+
+    transform: scale(0.95);
+
+    transition: 1s ease;
+}
+
+
+.special-line.show {
+
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.next-button {
+
+    margin-top: 22px;
+
+    padding: 13px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #8f4563;
+
+    color: white;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 22px rgba(120,50,80,0.25);
+
+    display: none;
+
+    transition: 0.3s;
+}
+
+
+.next-button:hover {
+
+    transform: translateY(-2px) scale(1.03);
+
+    box-shadow:
+        0 12px 28px rgba(120,50,80,0.32);
+}
+
+
+/* =========================
+   OPEN STATE
+========================= */
+
+.open .lock-screen {
+
+    display: none;
+}
+
+.open .letter-content {
+
+    display: block;
+}
+
+.open .letter-card {
+
+    min-height: 430px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 550px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .letter-card {
+        padding: 32px 23px;
+        min-height: 390px;
+    }
+
+    .letter-content h2 {
+        font-size: 29px;
+    }
+
+    .letter-text {
+        font-size: 16px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- Background -->
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<div class="floating-heart f1">♡</div>
+<div class="floating-heart f2">♡</div>
+<div class="floating-heart f3">✦</div>
+<div class="floating-heart f4">♡</div>
+<div class="floating-heart f5">✧</div>
+<div class="floating-heart f6">♡</div>
+<div class="floating-heart f7">♡</div>
+
+
+<!-- Main -->
+
+<div class="container">
+
+    <div class="eyebrow">
+        SOMETHING I WANTED TO SAY
+    </div>
+
+    <div class="title">
+        A Little Letter 💌
+    </div>
+
+
+    <div class="letter-card" id="letterCard">
+
+
+        <!-- LOCK SCREEN -->
+
+        <div class="lock-screen">
+
+            <div class="lock-icon">
+                ♡
+            </div>
+
+            <h2>
+                There's something<br>
+                I never said properly...
+            </h2>
+
+            <p>
+                Open this little secret when you're ready.
+            </p>
+
+            <button
+                class="seal-button"
+                onclick="openLetter()"
+                aria-label="Open letter"
+            >
+                ❤
+            </button>
+
+        </div>
+
+
+        <!-- LETTER -->
+
+        <div class="letter-content">
+
+            <div class="letter-date">
+                27 · 08 · 2025
+            </div>
+
+            <h2>
+                To my lucky charm ♡
+            </h2>
+
+
+            <div class="letter-text">
+
+                <p id="p1">
+                    Enaku una thavira yaarum important ila da ammuu..
+                    enaku nee mattum en life la irundhute irukanum vera yarum venam
+                    epovumey enaku idhe mari love and care kuduthute irunga enaku adhuve podhum
+                </p>
+
+                <p id="p2">
+                    Aprm ena analum nanu una vitu poga matte...ena analum
+                    seri nee enaku dhan na unaku dhaney🥹❤️
+
+        
+                </p>
+
+                <p id="p3">
+                    Neenga matum en life la ilana na ena agirupenu therla da gundu
+                    epovum ena vtu matum poiratha plzz da ammu....roma overthink panatha na unkoodave
+                    dha irupen iruke epovumey.
+                </p>
+
+                <p id="p4">
+                    And love you so much always my lucky charm
+                    
+                </p>
+
+            </div>
+
+
+            <div class="special-line" id="specialLine">
+
+                "If I had to choose that moment again...
+                <br>
+                I'd still say yes." ❤️
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="next-button"
+        id="nextButton"
+        onclick="goNext()"
+    >
+        Continue our story → ✨
+    </button>
+
+</div>
+
+
+<script>
+
+function openLetter() {
+
+    const card =
+        document.getElementById("letterCard");
+
+    card.classList.add("open");
+
+
+    /*
+       Reveal letter lines one by one
+    */
+
+    setTimeout(() => {
+        document.getElementById("p1")
+            .classList.add("show");
+    }, 700);
+
+
+    setTimeout(() => {
+        document.getElementById("p2")
+            .classList.add("show");
+    }, 1800);
+
+
+    setTimeout(() => {
+        document.getElementById("p3")
+            .classList.add("show");
+    }, 2900);
+
+
+    setTimeout(() => {
+        document.getElementById("p4")
+            .classList.add("show");
+    }, 4000);
+
+
+    /*
+       Special final line
+    */
+
+    setTimeout(() => {
+
+        document
+            .getElementById("specialLine")
+            .classList.add("show");
+
+    }, 5300);
+
+
+    /*
+       Continue button
+    */
+
+    setTimeout(() => {
+
+        document
+            .getElementById("nextButton")
+            .style.display = "inline-block";
+
+    }, 6500);
+
+}
+
+
+function goNext() {
+
+    window.location.href =
+        "final-surprise.html";
+
+}
+
+</script>
+
+</body>
+</html>

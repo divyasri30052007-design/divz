@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Secret For You 💗</title>
+
+    <link rel="stylesheet" href="welcome.css">
+</head>
+
+<body>
+    <!-- Ambient background -->
+    <div class="bg-glow glow-one"></div>
+    <div class="bg-glow glow-two"></div>
+
+    <!-- Floating particles -->
+    <div id="particles"></div>
+
+    <!-- Main glass card -->
+    <div class="welcome-card">
+
+        <!-- Top decoration -->
+        <div class="top-decoration">
+            <span></span>
+            <i>♡</i>
+            <span></span>
+        </div>
+
+
+        <!-- Small label -->
+        <p class="eyebrow">
+            YOUR SECRET JOURNEY
+        </p>
+
+
+        <!-- Main heading -->
+        <h1>
+            There's More
+            <span>Waiting For You...</span>
+        </h1>
+
+
+        <!-- Heart orb -->
+        <div class="heart-orb">
+
+            <div class="orb-ring ring-one"></div>
+            <div class="orb-ring ring-two"></div>
+
+            <div class="orb-core">
+                <span>♥</span>
+            </div>
+
+            <div class="mini-star star-one">✦</div>
+            <div class="mini-star star-two">✧</div>
+            <div class="mini-star star-three">·</div>
+            <div class="mini-star star-four">✦</div>
+
+        </div>
+
+
+        <!-- Message -->
+        <div class="message">
+
+            <p class="main-message">
+                You unlocked the first secret.
+            </p>
+
+            <p class="sub-message">
+                But I didn't make this just to give you
+                one little surprise...
+                <br>
+                <span>there's a whole story waiting inside.</span>
+            </p>
+
+        </div>
+
+
+        <!-- Memory counter -->
+        <div class="memory-count">
+
+            <div class="line"></div>
+
+            <div class="count">
+                <strong>01</strong>
+                <small>OF MANY<br>MEMORIES</small>
+            </div>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <!-- Button -->
+        <button id="startBtn">
+
+            <span class="btn-glow"></span>
+
+            <span class="btn-text">
+                ENTER THE STORY
+            </span>
+
+            <span class="btn-arrow">
+                →
+            </span>
+        <a href="firstcall.html" class="enter-btn">
+             ENTER THE STORY
+        </a>
+         </button>
+
+
+        <!-- Footer -->
+        <p class="footer">
+            love you ♡
+        </p>
+
+    </div>
+
+
+<script>
+
+    /* =================================
+       FLOATING PARTICLES
+    ================================= */
+
+    const particleBox =
+        document.getElementById("particles");
+
+    const symbols = [
+        "♡",
+        "✦",
+        "✧",
+        "·",
+        "⋆"
+    ];
+
+    for (let i = 0; i < 45; i++) {
+
+        const particle =
+            document.createElement("span");
+
+        particle.className = "particle";
+
+        particle.innerText =
+            symbols[
+                Math.floor(
+                    Math.random() * symbols.length
+                )
+            ];
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+        particle.style.animationDuration =
+            5 + Math.random() * 8 + "s";
+
+        particle.style.animationDelay =
+            Math.random() * 8 + "s";
+
+        particle.style.fontSize =
+            7 + Math.random() * 13 + "px";
+
+        particleBox.appendChild(particle);
+    }
+
+
+    /* =================================
+       BUTTON
+    ================================= */
+
+    const button =
+        document.getElementById("startBtn");
+
+    button.addEventListener("click", () => {
+
+        document.body.classList.add("enter-story");
+
+        setTimeout(() => {
+
+            window.location.href =
+                "gift.html";
+
+        }, 1500);
+
+    });
+
+
+    /* =================================
+       SUBTLE MOUSE MOVEMENT
+    ================================= */
+
+    const card =
+        document.querySelector(".welcome-card");
+
+    document.addEventListener("mousemove", (event) => {
+
+        const x =
+            (window.innerWidth / 2 - event.clientX) / 80;
+
+        const y =
+            (window.innerHeight / 2 - event.clientY) / 80;
+
+        card.style.transform =
+            `translate(${x}px, ${y}px)`;
+
+    });
+
+</script>
+
+</body>
+</html>

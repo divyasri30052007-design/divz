@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Only You Can Unlock This 💗</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Floating Background Hearts -->
+
+    <div class="floating-hearts">
+
+        <span>♡</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+
+    </div>
+
+
+
+    <!-- =========================
+         UNLOCK SCREEN
+    ========================== -->
+
+    <section id="unlockScreen" class="unlock-container">
+
+
+        <div class="lock-icon">
+
+            🔐
+
+        </div>
+
+
+        <p class="tiny-title">
+
+            A LITTLE SECRET FOR YOU
+
+        </p>
+
+
+        <h1>
+
+            Only You Can<br>
+            Unlock This 💗
+
+        </h1>
+
+
+        <p class="description">
+
+            This little surprise is protected
+            by something only you should know. 👀
+
+        </p>
+
+
+
+        <!-- Secret Clue -->
+
+        <div class="clue-box">
+
+            <span>💭</span>
+
+            <p>
+
+                <b>Clue:</b><br>
+
+                It's a special number
+                that means something to us...
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Code Display -->
+
+        <div id="codeDisplay" class="code-display">
+
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+
+        </div>
+
+
+
+        <!-- Keypad -->
+
+        <div class="keypad">
+
+
+            <button onclick="enterNumber(1)">
+                1
+            </button>
+
+            <button onclick="enterNumber(2)">
+                2
+            </button>
+
+            <button onclick="enterNumber(3)">
+                3
+            </button>
+
+
+            <button onclick="enterNumber(4)">
+                4
+            </button>
+
+            <button onclick="enterNumber(5)">
+                5
+            </button>
+
+            <button onclick="enterNumber(6)">
+                6
+            </button>
+
+
+            <button onclick="enterNumber(7)">
+                7
+            </button>
+
+            <button onclick="enterNumber(8)">
+                8
+            </button>
+
+            <button onclick="enterNumber(9)">
+                9
+            </button>
+
+
+            <button class="empty-button"></button>
+
+            <button onclick="enterNumber(0)">
+                0
+            </button>
+
+            <button onclick="deleteNumber()">
+                ⌫
+            </button>
+
+
+        </div>
+
+
+
+        <!-- Unlock Button -->
+
+        <button
+            class="unlock-button"
+            onclick="checkCode()">
+
+            🔓 Unlock My Surprise
+
+        </button>
+
+
+
+        <!-- Message -->
+
+        <p id="statusMessage"
+           class="status-message">
+
+        </p>
+
+
+    </section>
+
+
+
+
+    <!-- =========================
+         UNLOCKED SCREEN
+    ========================== -->
+
+    <section id="welcomeScreen"
+             class="welcome-container hidden">
+
+
+        <div class="unlock-success">
+
+            🔓
+
+        </div>
+
+
+        <p class="success-small">
+
+            ACCESS GRANTED ✨
+
+        </p>
+
+
+        <h1>
+
+            I Knew You'd<br>
+            Find It 🥹❤️
+
+        </h1>
+
+
+        <p>
+
+            You unlocked something
+            made especially for you.
+
+        </p>
+
+
+        <div class="mini-message">
+
+            💌
+
+            <br>
+
+            Now the real surprise begins...
+
+        </div>
+
+
+        <button
+            class="start-button"
+            onclick="startSurprise()">
+
+            Start The Surprise 🎁
+
+        </button>
+
+
+    </section>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+<!-- MEMORY SECTION -->
+<section class="memory-section" id="memorySection">
+
+    <h1>Our Little Memories 📸</h1>
+    <p class="memory-subtitle">
+        Some moments deserve to be remembered forever ❤️
+    </p>
+
+    <div class="memory-grid">
+
+        <div class="memory-card">
+            <img src="photo1.jpg" alt="Memory 1">
+            <div class="memory-info">
+                <h3>Our Beginning 💕</h3>
+                <p>Every beautiful story has a beginning...</p>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="photo2.jpg" alt="Memory 2">
+            <div class="memory-info">
+                <h3>A Special Moment ✨</h3>
+                <p>One of those moments I never want to forget.</p>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="photo3.jpg" alt="Memory 3">
+            <div class="memory-info">
+                <h3>That Smile ❤️</h3>
+                <p>A little memory that still makes me smile.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="memory-next" onclick="showReasons()">
+        There's More ❤️
+    </button>
+
+</section>

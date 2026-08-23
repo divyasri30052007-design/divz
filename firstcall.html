@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our First Message 💗</title>
+    <link rel="stylesheet" href="firstcall.css">
+</head>
+
+<body>
+
+    <div class="stars"></div>
+
+    <div class="container">
+
+        <div class="message">
+            <div class="speaker"></div>
+
+            <div class="screen">
+                <div class= "message-icon">💬</div>
+
+                <p class="small-text">A special moment...</p>
+
+                <h1>Our First Message</h1>
+
+                <div class="line"></div>
+
+                <p class="story">
+                    It was just one little message...
+                    <br>
+                    but somehow, it became the beginning
+                    <br>
+                    of something really special. 💕
+                </p>
+
+                <button onclick="showMemory()">
+                    ✨ Reveal the Memory
+                </button>
+
+                <div id="memory">
+                    <span>💬</span>
+                    <h2>That First hi <h2>
+                    <h3>That first Birthday Wish</h3>
+
+                    <p>
+                        “EVERYTHING IS MORE SPEACIAL 
+                        AND BEAUTIFUL MEMORIES.” 💗
+                    </p>
+
+                    <div class="date">
+                        💕 Our First Message 💕
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <button class="next-btn" onclick="goNext()">
+            Our First Meet → 💖
+        </button>
+
+    </div>
+
+    <script>
+        function showMemory() {
+            const memory = document.getElementById("memory");
+
+            memory.style.display = "block";
+
+            createHearts();
+        }
+
+        function createHearts() {
+
+            for (let i = 0; i < 25; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.className = "heart";
+                heart.innerHTML = "♥";
+
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration =
+                    (2 + Math.random() * 3) + "s";
+
+                heart.style.fontSize =
+                    (12 + Math.random() * 20) + "px";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }
+        }
+
+        function goNext() {
+            window.location.href = "firstmeet.html";
+        }
+    </script>
+
+</body>
+</html>

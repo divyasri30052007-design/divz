@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #40204f, #160b24 55%, #08030d);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Stars */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#ffd6f5 1px, transparent 1px);
+
+    background-size: 70px 70px, 110px 110px;
+    opacity: 0.35;
+    animation: starsMove 15s linear infinite;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+/* Main */
+
+.container {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+/* Phone */
+
+.phone {
+    width: 330px;
+    height: 590px;
+
+    background: #09070d;
+
+    border: 7px solid #3a3140;
+    border-radius: 42px;
+
+    box-shadow:
+        0 0 30px rgba(255, 130, 220, 0.25),
+        0 0 80px rgba(255, 100, 200, 0.12);
+
+    padding: 12px;
+}
+
+.speaker {
+    width: 80px;
+    height: 8px;
+
+    background: #27202c;
+
+    border-radius: 20px;
+
+    margin: 2px auto 12px;
+}
+
+/* Screen */
+
+.screen {
+    height: 535px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            160deg,
+            rgba(255, 170, 230, 0.13),
+            rgba(100, 40, 130, 0.1)
+        );
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    backdrop-filter: blur(10px);
+}
+
+.call-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 105, 190, 0.15);
+
+    font-size: 35px;
+
+    animation: phoneRing 1.5s infinite;
+}
+
+@keyframes phoneRing {
+
+    0%, 100% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-12deg);
+    }
+
+    75% {
+        transform: rotate(12deg);
+    }
+}
+
+.small-text {
+    margin-top: 20px;
+
+    color: #e6b9dc;
+
+    font-size: 13px;
+}
+
+h1 {
+    margin-top: 8px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 34px;
+
+    background: linear-gradient(
+        90deg,
+        #fff,
+        #ffbde8,
+        #fff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.line {
+    width: 60px;
+    height: 2px;
+
+    margin: 15px auto;
+
+    background: #ff9edc;
+}
+
+.story {
+    color: #e7d8e6;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+/* Button */
+
+button {
+    margin-top: 25px;
+
+    padding: 12px 22px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    border-radius: 30px;
+
+    background: rgba(255, 130, 210, 0.15);
+
+    color: white;
+
+    font-family: 'Poppins';
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+
+    background: rgba(255, 130, 210, 0.3);
+
+    box-shadow: 0 0 20px rgba(255, 130, 210, 0.4);
+}
+
+/* Memory */
+
+#memory {
+    display: none;
+
+    margin-top: 20px;
+
+    animation: reveal 1s ease;
+}
+
+@keyframes reveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#memory span {
+    font-size: 25px;
+}
+
+#memory h2 {
+    margin-top: 5px;
+
+    font-family: 'Playfair Display', serif;
+
+    color: #ffc4ec;
+}
+
+#memory p {
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    color: #dbc6d9;
+}
+
+.date {
+    margin-top: 10px;
+
+    font-size: 11px;
+
+    color: #ffb5e4;
+}
+
+/* Bottom */
+
+.bottom-text {
+    margin-top: 18px;
+
+    color: #d9b9d3;
+
+    font-size: 12px;
+}
+
+.next-btn {
+    display: block;
+    margin: 30px auto 0;
+}
+
+
+/* Floating hearts */
+
+.heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    color: #ff9edb;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    animation: floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(360deg) scale(1.2);
+        opacity: 0;
+    }
+}
+.enter-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    text-decoration: none;
+    cursor: pointer;
+}

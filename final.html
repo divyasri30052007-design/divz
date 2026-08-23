@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Forever Chapter 💜</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-family:Arial,sans-serif;
+
+    background:
+        radial-gradient(circle at 15% 15%,#ffffff 0%,transparent 25%),
+        radial-gradient(circle at 85% 20%,#e8d9ff 0%,transparent 28%),
+        radial-gradient(circle at 20% 90%,#d8c2fa 0%,transparent 30%),
+        linear-gradient(
+            135deg,
+            #eee5ff,
+            #d9c5f3,
+            #c5a9e8
+        );
+
+    position:relative;
+}
+
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+.glow{
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+    filter:blur(60px);
+
+    animation:glowMove 7s infinite alternate;
+}
+
+.glow1{
+    top:-100px;
+    left:-80px;
+}
+
+.glow2{
+    bottom:-100px;
+    right:-80px;
+
+    animation-delay:2s;
+}
+
+@keyframes glowMove{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(40px,25px);
+    }
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.star{
+    position:absolute;
+
+    color:rgba(255,255,255,.9);
+
+    font-size:16px;
+
+    animation:
+        sparkle 2s infinite alternate;
+}
+
+.star:nth-child(1){
+    top:12%;
+    left:12%;
+}
+
+.star:nth-child(2){
+    top:20%;
+    right:17%;
+    animation-delay:.5s;
+}
+
+.star:nth-child(3){
+    bottom:17%;
+    left:15%;
+    animation-delay:1s;
+}
+
+.star:nth-child(4){
+    bottom:23%;
+    right:12%;
+    animation-delay:1.5s;
+}
+
+.star:nth-child(5){
+    top:48%;
+    left:6%;
+    animation-delay:.7s;
+}
+
+.star:nth-child(6){
+    top:57%;
+    right:7%;
+    animation-delay:1.2s;
+}
+
+@keyframes sparkle{
+
+    from{
+        opacity:.25;
+        transform:scale(.6) rotate(0);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.4) rotate(20deg);
+    }
+}
+
+
+/* =========================
+   FLOATING PETALS
+========================= */
+
+.petal{
+    position:absolute;
+
+    color:rgba(255,255,255,.65);
+
+    font-size:22px;
+
+    animation:petalFloat 10s linear infinite;
+}
+
+.p1{
+    left:8%;
+    bottom:-30px;
+}
+
+.p2{
+    left:25%;
+    bottom:-30px;
+    animation-delay:2s;
+}
+
+.p3{
+    left:50%;
+    bottom:-30px;
+    animation-delay:4s;
+}
+
+.p4{
+    left:73%;
+    bottom:-30px;
+    animation-delay:1s;
+}
+
+.p5{
+    left:90%;
+    bottom:-30px;
+    animation-delay:5s;
+}
+
+@keyframes petalFloat{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:
+            translateY(-115vh)
+            rotate(240deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================
+   MAIN GLASS CARD
+========================= */
+
+.card{
+
+    width:390px;
+    min-height:620px;
+
+    position:relative;
+
+    z-index:10;
+
+    padding:35px 28px;
+
+    border-radius:40px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.70),
+            rgba(255,255,255,.30)
+        );
+
+    backdrop-filter:blur(22px);
+
+    border:
+        1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(76,45,111,.25),
+
+        inset 0 1px 0
+        rgba(255,255,255,.8);
+
+    text-align:center;
+
+    animation:cardAppear 1.3s ease;
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(35px)
+            scale(.92);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================
+   TOP LABEL
+========================= */
+
+.label{
+
+    font-size:9px;
+
+    letter-spacing:5px;
+
+    color:#765493;
+
+    margin-bottom:22px;
+}
+
+
+/* =========================
+   ORBIT HEART
+========================= */
+
+.heart-wrap{
+
+    width:145px;
+    height:145px;
+
+    margin:0 auto 25px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+.orbit{
+
+    position:absolute;
+
+    width:145px;
+    height:145px;
+
+    border:
+
+        1px solid
+        rgba(126,91,171,.35);
+
+    border-radius:50%;
+
+    animation:rotate 10s linear infinite;
+}
+
+
+.orbit::before{
+
+    content:"✦";
+
+    position:absolute;
+
+    top:-8px;
+    left:50%;
+
+    color:#8660aa;
+
+    font-size:14px;
+}
+
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+.heart{
+
+    width:105px;
+    height:105px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:55px;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff,
+            #eadcff
+        );
+
+    box-shadow:
+
+        0 0 30px
+        rgba(143,103,191,.30),
+
+        inset 0 0 20px
+        rgba(255,255,255,.8);
+
+    animation:heartBeat 2s infinite;
+}
+
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.07);
+    }
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+h1{
+
+    font-family:Georgia,serif;
+
+    font-size:34px;
+
+    font-weight:normal;
+
+    color:#4d3569;
+
+    line-height:1.25;
+
+    margin-bottom:10px;
+}
+
+
+.subtitle{
+
+    color:#866e9c;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    font-style:italic;
+}
+
+
+.divider{
+
+    width:55px;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #8d69b1,
+            transparent
+        );
+
+    margin:20px auto;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message{
+
+    font-family:Georgia,serif;
+
+    color:#665276;
+
+    font-size:13px;
+
+    line-height:2;
+
+    padding:0 12px;
+}
+
+
+.message span{
+
+    color:#715095;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.continue{
+
+    margin-top:27px;
+
+    padding:14px 25px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8460aa,
+            #62417f
+        );
+
+    color:white;
+
+    font-size:11px;
+
+    letter-spacing:1.5px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(90,60,125,.3);
+
+    transition:.35s;
+}
+
+.continue:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 30px
+        rgba(90,60,125,.4);
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final{
+
+    display:none;
+
+    animation:finalReveal 1.3s ease;
+}
+
+@keyframes finalReveal{
+
+    from{
+        opacity:0;
+        transform:scale(.75);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+.final-icon{
+
+    font-size:60px;
+
+    margin:10px 0 18px;
+
+    animation:heartBeat 1.7s infinite;
+}
+
+
+.final h2{
+
+    font-family:Georgia,serif;
+
+    font-size:31px;
+
+    font-weight:normal;
+
+    color:#4d3569;
+
+    line-height:1.35;
+}
+
+
+.final-text{
+
+    margin-top:20px;
+
+    color:#665276;
+
+    font-family:Georgia,serif;
+
+    font-size:13px;
+
+    line-height:2;
+}
+
+
+.signature{
+
+    margin-top:25px;
+
+    color:#745293;
+
+    font-family:Georgia,serif;
+
+    font-style:italic;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   POP HEARTS
+========================= */
+
+.pop-heart{
+
+    position:absolute;
+
+    font-size:18px;
+
+    pointer-events:none;
+
+    animation:popHeart 2.5s ease forwards;
+}
+
+@keyframes popHeart{
+
+    0%{
+        opacity:0;
+        transform:
+            translateY(30px)
+            scale(.3);
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            translateY(-220px)
+            scale(1.5)
+            rotate(25deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px){
+
+    .card{
+
+        width:92vw;
+
+        min-height:590px;
+
+        padding:32px 20px;
+
+        border-radius:35px;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+    .message{
+        font-size:12px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND GLOW -->
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+
+<!-- STARS -->
+
+<div class="star">✦</div>
+<div class="star">✧</div>
+<div class="star">✦</div>
+<div class="star">✧</div>
+<div class="star">✦</div>
+<div class="star">✧</div>
+
+
+<!-- FLOATING PETALS -->
+
+<div class="petal p1">♡</div>
+<div class="petal p2">✧</div>
+<div class="petal p3">♡</div>
+<div class="petal p4">✦</div>
+<div class="petal p5">♡</div>
+
+
+<!-- MAIN CARD -->
+
+<div class="card" id="card">
+
+
+    <!-- START SCREEN -->
+
+    <div id="start">
+
+
+        <div class="label">
+            THE LAST PAGE
+        </div>
+
+
+        <div class="heart-wrap">
+
+            <div class="orbit"></div>
+
+            <div class="heart">
+                💜
+            </div>
+
+        </div>
+
+
+        <h1>
+            Our Story<br>
+            Continues...
+        </h1>
+
+
+        <div class="subtitle">
+            you are my best gift ever got in my life
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <div class="message">
+
+            Some memories are unforgettable with full of ups and downs
+
+            <br>
+
+            Ours is written in
+            <span>little moments</span>,
+            random conversations,
+            silly laughs and memories.
+
+            <br><br>
+
+            And somehow,
+            every little moment
+            became something
+            I never want to forget. ✨
+
+            <br><br>
+
+        
+
+        </div>
+
+
+        <button
+            class="continue"
+            onclick="openFinal()">
+
+            OPEN THE LAST SURPRISE ✦
+
+        </button>
+
+    </div>
+
+
+
+    <!-- FINAL REVEAL -->
+
+    <div
+        class="final"
+        id="final">
+
+
+        <div class="final-icon">
+            💜
+        </div>
+
+
+        <h2>
+            Happy First Year Anniversary
+        </h2>
+
+
+        <div class="divider"></div>
+
+
+        <div class="final-text">
+
+          enaku neenga epovume enkoodave irukanum thats my wish
+
+            <br><br>
+
+            ena sanda potalum hurt panalum
+            <span>neenga enaku venum.</span>
+
+            <br><br>
+                elarum namala ena thapa pesunalum okay yaru namala vitutu
+                ponalum okay i always choose rather than other
+                en mela ena kovam irundhalum soliru da ana vitutu
+                matum poiratha ammu pesamayum irukathinga 
+
+
+            <br><br>
+
+            Thank you for being
+            one of my bestest part of my life. 💜
+
+        </div>  
+
+
+        <div class="signature">
+
+            — With love,
+            always & forever ✨
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+
+function openFinal(){
+
+    const start =
+    document.getElementById("start");
+
+    const final =
+    document.getElementById("final");
+
+
+    /* HIDE START */
+
+    start.style.display="none";
+
+
+    /* SHOW FINAL */
+
+    final.style.display="block";
+
+
+    /* HEART EXPLOSION */
+
+    for(let i=0;i<28;i++){
+
+        const heart =
+        document.createElement("div");
+
+        heart.className="pop-heart";
+
+        heart.innerHTML =
+            Math.random() > .5
+            ? "💜"
+            : "♡";
+
+
+        heart.style.left =
+            (Math.random()*90+5)+"%";
+
+
+        heart.style.top =
+            (Math.random()*60+30)+"%";
+
+
+        heart.style.animationDelay =
+            (Math.random()*1)+"s";
+
+
+        document
+            .getElementById("card")
+            .appendChild(heart);
+
+
+        setTimeout(()=>{
+
+            heart.remove();
+
+        },3500);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

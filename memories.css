@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Georgia", serif;
+
+    background-image: url("images/memory.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    overflow: hidden;
+}
+
+/* Photo overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(2px);
+}
+
+/* Main content */
+.memory-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 700px;
+
+    padding: 55px 35px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+
+    animation: appear 1.5s ease;
+}
+
+.small-title {
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    opacity: 0.85;
+}
+
+h1 {
+    font-size: 52px;
+    margin-bottom: 25px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.date {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.5);
+
+    font-size: 20px;
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.message span {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+button {
+    margin-top: 35px;
+
+    padding: 14px 30px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: white;
+    color: #c2185b;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .memory-content {
+        padding: 40px 20px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+}

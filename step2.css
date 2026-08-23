@@ -1,0 +1,603 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #29132f 0%,
+            #100813 42%,
+            #050307 100%
+        );
+
+    color: white;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s ease;
+}
+
+
+/* ==========================
+   MOUSE LIGHT
+========================== */
+
+.mouse-glow {
+
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 120, 200, 0.12),
+            transparent 70%
+        );
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 1;
+}
+
+
+/* ==========================
+   STARS
+========================== */
+
+.stars {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+}
+
+.star {
+
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    opacity: 0.25;
+
+    animation: twinkle infinite ease-in-out;
+}
+
+@keyframes twinkle {
+
+    0%,100% {
+        opacity: 0.15;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.8);
+    }
+}
+
+
+/* ==========================
+   FLOATING SYMBOLS
+========================== */
+
+.hearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.floating-heart {
+
+    position: absolute;
+
+    bottom: -40px;
+
+    color:
+        rgba(255, 160, 210, 0.35);
+
+    font-size: 16px;
+
+    animation:
+        floatUp linear infinite;
+}
+
+@keyframes floatUp {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.5;
+    }
+
+    80% {
+        opacity: 0.3;
+    }
+
+    to {
+
+        transform:
+            translateY(-110vh)
+            rotate(180deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ==========================
+   MAIN SCENE
+========================== */
+
+.scene {
+
+    width: min(900px, 90%);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+
+    animation:
+        sceneAppear 1.6s ease;
+}
+
+@keyframes sceneAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.96)
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* ==========================
+   TOP LINE
+========================== */
+
+.top-line {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+}
+
+.top-line span {
+
+    width: 55px;
+
+    height: 1px;
+
+    background:
+        rgba(255, 170, 215, 0.35);
+}
+
+.top-line p {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: #9f849c;
+}
+
+
+/* ==========================
+   TEXT
+========================== */
+
+.first-line {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #e69ac6;
+
+    margin-bottom: 20px;
+
+    animation:
+        textReveal 1.5s ease;
+}
+
+h1 {
+
+    font-size:
+        clamp(42px, 6vw, 72px);
+
+    font-weight: normal;
+
+    line-height: 1.05;
+
+    margin-bottom: 28px;
+
+    letter-spacing: -2px;
+}
+
+h1 span {
+
+    display: block;
+
+    font-style: italic;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9bcf,
+            #ffffff,
+            #c98cff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.story {
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #b9aab8;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==========================
+   PORTAL
+========================== */
+
+.portal {
+
+    position: relative;
+
+    width: 180px;
+    height: 100px;
+
+    margin: 0 auto 25px;
+}
+
+.portal-glow {
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    left: 0;
+    top: -45px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 90, 190, 0.25),
+            transparent 65%
+        );
+
+    animation:
+        portalPulse 3s infinite;
+}
+
+@keyframes portalPulse {
+
+    0%,100% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+.door {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 82px;
+    height: 105px;
+
+    border:
+        1px solid
+        rgba(255, 190, 225, 0.4);
+
+    border-radius:
+        45px 45px 8px 8px;
+
+    background:
+        linear-gradient(
+            160deg,
+            rgba(255, 150, 210, 0.14),
+            rgba(80, 30, 80, 0.25)
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(255, 80, 190, 0.18);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.5s ease;
+}
+
+.door:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.05);
+
+    box-shadow:
+        0 0 50px
+        rgba(255, 100, 200, 0.35);
+}
+
+.door-symbol {
+
+    margin-top: 20px;
+
+    font-size: 26px;
+
+    color: #ff9bd0;
+}
+
+.door p {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    color: #bfa6bb;
+
+    margin-top: 7px;
+}
+
+.keyhole {
+
+    width: 5px;
+    height: 5px;
+
+    background: #ffb1d9;
+
+    border-radius: 50%;
+
+    margin: 12px auto;
+
+    box-shadow:
+        0 0 10px #ff8acb;
+}
+
+
+/* ==========================
+   BUTTON
+========================== */
+
+#startBtn {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 15px 27px;
+
+    border-radius: 50px;
+
+    border:
+        1px solid
+        rgba(255, 180, 220, 0.45);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: 0.4s ease;
+
+    backdrop-filter: blur(15px);
+}
+
+#startBtn:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(255, 190, 225, 0.9);
+
+    box-shadow:
+        0 12px 40px
+        rgba(255, 80, 180, 0.25);
+}
+
+.button-light {
+
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    background:
+        rgba(255, 140, 205, 0.25);
+
+    border-radius: 50%;
+
+    filter: blur(20px);
+
+    left: -20px;
+
+    animation:
+        buttonGlow 3s infinite;
+}
+
+@keyframes buttonGlow {
+
+    0%,100% {
+        left: -20px;
+    }
+
+    50% {
+        left: 100%;
+    }
+}
+
+.arrow {
+
+    font-size: 18px;
+
+    transition: 0.3s;
+}
+
+#startBtn:hover .arrow {
+
+    transform:
+        translateX(5px);
+}
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer {
+
+    margin-top: 25px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #665568;
+}
+
+
+/* ==========================
+   EXIT
+========================== */
+
+body.opening {
+
+    opacity: 0;
+
+    transform:
+        scale(1.12);
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 600px) {
+
+    .scene {
+        width: 88%;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .story {
+        font-size: 13px;
+    }
+
+    .top-line {
+        margin-bottom: 25px;
+    }
+
+    .portal {
+        transform: scale(0.9);
+    }
+}

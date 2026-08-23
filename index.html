@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something Special 💗</title>
+
+    <link rel="stylesheet" href="unlock.css">
+</head>
+
+<body>
+
+    <!-- Floating particles -->
+    <div class="particles"></div>
+
+    <main class="unlock-container">
+
+        <div class="lock-circle">
+            <div class="lock-icon">🔐</div>
+        </div>
+
+        <p class="small-text">A LITTLE SECRET AWAITS</p>
+
+        <h1>Only You Can Unlock This 💗</h1>
+
+        <p class="subtitle">
+            Some memories are meant to be opened<br>
+            by the right person...
+        </p>
+
+        <div class="input-box">
+
+            <label>📅 Secret Date</label>
+            <input
+                type="text"
+                id="secretDate"
+                placeholder="DDMMYYYY"
+                maxlength="8"
+            >
+
+            <label>🔑 Secret Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter the secret..."
+            >
+
+            <button onclick="unlock()">
+                <span>UNLOCK THE SURPRISE</span>
+                <span class="arrow">→</span>
+            </button>
+
+        </div>
+
+        <p id="message"></p>
+
+        <div class="hint">
+            ✨ Hint: It's a date + something only you know
+        </div>
+
+    </main>
+
+    <script src="unlock.js"></script>
+
+</body>
+</html>
